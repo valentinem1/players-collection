@@ -34,10 +34,4 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    players: state.players
-  };
-};
-
-export default connect(mapStateToProps, { setPlayers })(withRouter(App));
+export default connect(null, { setPlayers })(withRouter(App));

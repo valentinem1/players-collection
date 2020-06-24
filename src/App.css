@@ -1,3 +1,27 @@
 .App {
   text-align: center;
+  /* width: 1000px; */
+}
+
+.players-container{
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.players-group-card{
+  display: flex;
+  align-items: center;
+  /* width: 1000px; */
+}
+
+.player-card{
+  /* display: block; */
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.player-image{
+  width: 22vw;
+  height: 30vh;
 }
