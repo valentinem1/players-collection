@@ -33,7 +33,41 @@
   margin: 15px;
 }
 
+.player-header{
+  font-family: 'Krona One';
+}
+
 .player-image{
   width: 22vw;
   height: 30vh;
+}
+
+.player-likes-container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.likes-btn{
+  margin: auto;
+  margin-right: 5px;
+
+}
+.dislikes-btn{
+  margin: auto;
+  margin-left: 5px;
+}
+
+.player-likes-btn{
+  border: solid 1.5px;
+  border-radius: 5px;
+  background-color: #f3efef;
+  border-color: #f3efef;
+  padding: 3px 15px;
+}
+
+.player-likes-btn:hover{
+  cursor: pointer;
+  background-color: #e6e3e1;
+  border-color: #e6e3e1;
 }
