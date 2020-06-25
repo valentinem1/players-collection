@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setPlayers } from './Actions/playersAction';
 
 import Home from './Components/Home';
-import Header from './Components/Header';
+import HeaderContainer from './Components/HeaderContainer';
 
 import './App.css';
 
@@ -26,7 +26,7 @@ const App = (props) => {
 
   return (
     <div className="App">
-        <Header />
+        <HeaderContainer />
         <Switch>
           <Route exact path="/" component={ Home } />
         </Switch>
