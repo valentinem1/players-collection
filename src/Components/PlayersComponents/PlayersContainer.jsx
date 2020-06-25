@@ -13,9 +13,7 @@ const PlayersContainer = (props) => {
 
     return (
         <div className="players-container">
-            <Card.Group className="players-group-card">
                 {playersArr}
-            </Card.Group>
         </div>
     );
 };

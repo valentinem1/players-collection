@@ -3,22 +3,33 @@
   /* width: 1000px; */
 }
 
-.players-container{
-  width: 100vw;
-  margin-left: auto;
-  margin-right: auto;
+@font-face{
+  font-family: 'Krona One';
+  src: url('https://fonts.googleapis.com/css?family=Krona+One')
 }
 
-.players-group-card{
+.header-title{
+  font-size: 5vw;
+  font-family: 'Krona One';
+  background-color: rgb(255, 157, 0);
+  height: 20vh;
+}
+
+.players-container{
+  /* width: 100vw; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.players-container{
   display: flex;
-  align-items: center;
-  /* width: 1000px; */
+  flex-flow: row wrap;
+  margin-left: 25px;
 }
 
 .player-card{
-  /* display: block; */
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin: 15px;
 }
 
 .player-image{
