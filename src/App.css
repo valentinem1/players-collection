@@ -12,7 +12,8 @@
   font-size: 5vw;
   font-family: 'Krona One';
   background-color: rgb(255, 157, 0);
-  height: 20vh;
+  padding: 30px;
+  height: 100px;
 }
 
 .players-container{
