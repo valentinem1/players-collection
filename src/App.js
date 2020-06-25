@@ -10,9 +10,7 @@ import HeaderContainer from './Components/HeaderContainer';
 
 import './App.css';
 
-const App = (props) => {
-
-  const { setPlayers } = props;
+const App = ({ setPlayers }) => {
 
   // fetch data from backend
   useEffect (() => {
@@ -20,6 +18,7 @@ const App = (props) => {
       .then(r => r.json())
       .then(data => {
         // set the state to the data back from the backend
+        // console.log(data.players)
         setPlayers(data.players);
       });
   }, []);
