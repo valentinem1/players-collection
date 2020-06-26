@@ -11,3 +11,10 @@ export const updateLikes = (player) => {
         player
     }
 }
+
+export const updateDislikes = (player) => {
+    return {
+        type: "INCREASE DISLIKES",
+        player
+    }
+}

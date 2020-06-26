@@ -1,17 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateLikes } from '../../Actions/playersAction';
+import { updateLikes, updateDislikes } from '../../Actions/playersAction';
 
 import { Card, Header, Image, Button } from 'semantic-ui-react';
 
-const PlayersCard = ({ player, updateLikes, playersState }) => {
+const PlayersCard = ({ player, updateLikes, updateDislikes, playersState }) => {
 
     // handle fetch for likes
     const handleClickLikes = (evt) => {
         evt.preventDefault();
-
         fetch(`http://localhost:3000/players/${_id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -28,7 +27,19 @@ const PlayersCard = ({ player, updateLikes, playersState }) => {
     // handle fetch for dislikes
     const handleClickDislikes = (evt) => {
         evt.preventDefault();
-        console.log('disliked')
+        fetch(`http://localhost:3000/players/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                dislikes: dislikes + 1
+            })
+        })
+        .then(r => r.json())
+        .then(playerData => {
+            updateDislikes(playerData.data.player);
+        })
     }
 
     
@@ -55,4 +66,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { updateLikes })(PlayersCard);
+export default connect(mapStateToProps, { updateLikes, updateDislikes })(PlayersCard);

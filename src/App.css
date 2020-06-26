@@ -9,11 +9,11 @@
 }
 
 .header-title{
-  font-size: 5vw;
+  font-size: 45px;
   font-family: 'Krona One';
   background-color: rgb(255, 157, 0);
   padding: 30px;
-  height: 100px;
+  height: 60px;
 }
 
 .players-container{
