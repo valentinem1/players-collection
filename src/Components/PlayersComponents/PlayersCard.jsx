@@ -20,7 +20,9 @@ const PlayersCard = ({ player, updateLikes, playersState }) => {
             })
         })
         .then(r => r.json())
-        .then(data => updateLikes(data))
+        .then(playerData => {
+            updateLikes(playerData.data.player);
+        })
     }
 
     // handle fetch for dislikes

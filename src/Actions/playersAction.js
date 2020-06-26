@@ -1,5 +1,4 @@
 export const setPlayers = (players) => {
-    // console.log('from action', players)
     return {
         type: "SET PLAYERS",
         players
