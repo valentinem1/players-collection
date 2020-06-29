@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateLikes, updateDislikes } from '../../Actions/playersAction';
+import { updateLikes } from '../../Actions/playersAction';
 
 import { Card, Header, Image, Button } from 'semantic-ui-react';
 
-const PlayersCard = ({ player, updateLikes, updateDislikes, playersState }) => {
+const PlayersCard = ({ player, updateLikes }) => {
 
     // handle fetch for likes
     const handleClickLikes = (evt) => {
@@ -24,26 +24,7 @@ const PlayersCard = ({ player, updateLikes, updateDislikes, playersState }) => {
         })
     }
 
-    // handle fetch for dislikes
-    const handleClickDislikes = (evt) => {
-        evt.preventDefault();
-        fetch(`http://localhost:3000/players/${_id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                dislikes: dislikes + 1
-            })
-        })
-        .then(r => r.json())
-        .then(playerData => {
-            updateDislikes(playerData.data.player);
-        })
-    }
-
-    
-    const { _id, first_name, last_name, image, likes, dislikes } = player;
+    const { _id, first_name, last_name, image, likes } = player;
 
     return (
         <div>
@@ -51,8 +32,7 @@ const PlayersCard = ({ player, updateLikes, updateDislikes, playersState }) => {
                 <Image className="player-image" src={image} alt="players picture" />
                 <Header className="player-header">{first_name + ' ' + last_name}</Header>
                 <div className="player-likes-container">
-                    <Button onClick={handleClickLikes} className="likes-btn player-likes-btn">{likes} <span role='img' aria-label="heart emoji">❤️</span></Button>
-                    <Button onClick={handleClickDislikes} className="dislikes-btn player-likes-btn">{dislikes} <span role='img' aria-label="broken heart emoji">💔</span></Button>
+                    <Button onClick={handleClickLikes} className="player-likes-btn">{likes} <span role='img' aria-label="heart emoji">❤️</span></Button>
                 </div>
             </Card>
         </div>
@@ -60,10 +40,9 @@ const PlayersCard = ({ player, updateLikes, updateDislikes, playersState }) => {
 };
 
 const mapStateToProps = (state) => {
-    // console.log(state.players)
     return{
         playersState: state.players
     }
 }
 
-export default connect(mapStateToProps, { updateLikes, updateDislikes })(PlayersCard);
+export default connect(mapStateToProps, { updateLikes })(PlayersCard);

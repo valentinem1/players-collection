@@ -1,5 +1,3 @@
-import { updateDislikes } from "../Actions/playersAction";
-
 const initialState = [
 
 ];
@@ -14,9 +12,6 @@ const playersReducer = (state=initialState, action) => {
             const updatedLikes = state.map(player => player._id === action.player._id ? action.player : player);
             return updatedLikes;
 
-        case "INCREASE DISLIKES":
-            const updatedDislikes = state.map(player => player._id === action.player._id ? action.player : player); 
-            return updatedDislikes;
         default:
             return state;
     }
