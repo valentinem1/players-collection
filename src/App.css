@@ -1,32 +1,39 @@
 .App {
   text-align: center;
-  /* width: 1000px; */
 }
 
+/* Imports font from google font */
 @font-face{
   font-family: 'Krona One';
   src: url('https://fonts.googleapis.com/css?family=Krona+One')
 }
 
+/* HEADER */
 .header-title{
-  font-size: 45px;
+  font-size: 30px;
+  text-align: left;
   font-family: 'Krona One';
-  background-color: rgb(255, 157, 0);
-  padding: 30px;
-  height: 60px;
+  color: #e5b63c;
+  background-color: #13116b;
+  padding: 20px;
 }
 
-.players-container{
-  /* width: 100vw; */
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+/* HOME PAGE */
+.home-page-header{
+  font-size: 60px;
+  font-family: 'Krona One';
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 500px;
 }
 
+/* PLAYERS COLLECTION PAGE */
 .players-container{
   display: flex;
   flex-flow: row wrap;
-  margin-left: 25px;
+  margin-left: 30px;
+  margin-top: 50px;
 }
 
 .player-card{
@@ -38,8 +45,8 @@
 }
 
 .player-image{
-  width: 22vw;
-  height: 30vh;
+  width: 245px;
+  height: 200px;
 }
 
 .player-likes-container{
@@ -48,17 +55,9 @@
   align-items: center;
 }
 
-.likes-btn{
-  margin: auto;
-  margin-right: 5px;
-
-}
-.dislikes-btn{
-  margin: auto;
-  margin-left: 5px;
-}
-
 .player-likes-btn{
+  margin: auto;
+  margin-top: 10px;
   border: solid 1.5px;
   border-radius: 5px;
   background-color: #f3efef;
@@ -70,4 +69,35 @@
   cursor: pointer;
   background-color: #e6e3e1;
   border-color: #e6e3e1;
+}
+
+.pagination-container{
+  margin-top: 100px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+.pagination-text{
+  font-size: 20px;
+  color: #666666;
+}
+
+.pagination-btn{
+  font-size: 20px;
+  border: none;
+  background-color: #ffffff !important;
+}
+
+.pagination-btn:hover{
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer-container{
+  margin-top: 520px;
+  padding: 20px 20px 5px 20px;
+  background-color: #e6e3e1;
+}
+
+.footer-paragraph{
+  font-size: 15px;
 }
