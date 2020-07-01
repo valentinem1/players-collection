@@ -16,23 +16,25 @@ import './App.css';
 const App = ({ setPlayers, setMetadata, metadataState }) => {
 
   const { current_page } = metadataState;
+
   // fetch data from backend
   useEffect (() => {
-      fetch(`http://localhost:3000/players?page=${current_page}`)
+    fetch(`http://localhost:3000/players?page=${current_page}`)
       .then(r => r.json())
       .then(data => {
         // set the state to the data back from the backend
+        // console.log(data.metadata);
         setMetadata(data.metadata);
         setPlayers(data.players);
       });
-  }, []);
+  }, [current_page]);
 
   return (
     <div className="App">
         <HeaderContainer />
         <Switch>
           <Route exact path="/" component={ Home } />
-          <Route exact path={`/players/:page`} component={ PlayersContainer } />
+          <Route exact path='/players' component={ PlayersContainer } />
         </Switch>
         <FooterContainer />
     </div>

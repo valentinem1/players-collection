@@ -1,13 +1,14 @@
-export const setMetadata = (metadata) => {
+export const setMetadata = (data) => {
+    // console.log(data);
     return {
         type: "SET METADATA",
-        metadata
+        data
     }
 }
 
-export const updateMetadata = (data) => {
+export const updateMetadata = (current_page) => {
     return {
         type: "UPDATE METADATA",
-        data
+        current_page
     }
 }
