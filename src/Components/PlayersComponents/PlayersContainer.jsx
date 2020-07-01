@@ -13,9 +13,14 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
 
     const playersArr =  playersState ? playersState.map(player => <ProjectCard key={player._id} player={player} />) : null
 
-    const handlePagination = (evt) => {
+    const handleForwardPagination = (evt) => {
         evt.preventDefault();
         updateMetadata(current_page + 1);
+    }
+
+    const handleBackwardPagination = (evt) => {
+        evt.preventDefault();
+        updateMetadata(current_page - 1);
     }
 
     return (
@@ -24,10 +29,10 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
                 {playersArr}
             </div>
             <div className="pagination-container">
-                <div className="divagination-text">Page {current_page} of {total_pages}<Button onClick={handlePagination} className="pagination-btn" role='img' aria-label="heart emoji">→</Button></div>
+                <div className="divagination-text"><Button hidden={current_page === 1 ? true : false} onClick={handleBackwardPagination} className="pagination-btn" role='img' aria-label="heart emoji">←</Button> Page {current_page} of {total_pages}<Button onClick={handleForwardPagination} className="pagination-btn" role='img' aria-label="heart emoji">→</Button></div>
             </div>
         </div>
-    );
+    ); 
 };
 
 const mapStatetoProps = (state) => {
