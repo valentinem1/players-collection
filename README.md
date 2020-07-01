@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 <br/>
 
-# [Backend repo](https://github.com/valentinem1/ExpressAPI)
+## [Backend repo](https://github.com/valentinem1/ExpressAPI)
 <br />
 
 This project focuses on practicing using Express/Mongoose/MongoDB.
