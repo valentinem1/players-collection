@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { updateMetadata }  from '../../Actions/metadataAction';
 
 import { Button } from 'semantic-ui-react';
-
 
 import ProjectCard from './PlayersCard';
 

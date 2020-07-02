@@ -7,11 +7,13 @@ import { setPlayers } from './Actions/playersAction';
 import { setMetadata } from './Actions/metadataAction'
 
 import Home from './Components/Home';
-import PlayersContainer from './Components/PlayersComponents/PlayersContainer';
+import PlayersContainer from './Components/HomeComponents/PlayersContainer';
 import HeaderContainer from './Components/HeaderContainer';
 import FooterContainer from './Components/FooterContainer';
 
-import './App.css';
+import PlayersShowContainer from './Components/PlayersComponents/PlayersShowContainer'
+
+import './CSS/App.css';
 
 const App = ({ setPlayers, setMetadata, metadataState }) => {
 
@@ -35,6 +37,7 @@ const App = ({ setPlayers, setMetadata, metadataState }) => {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path='/players' component={ PlayersContainer } />
+          <Route path="/players/:id" component={ PlayersShowContainer } />
         </Switch>
         <FooterContainer />
     </div>
