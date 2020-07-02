@@ -47,6 +47,7 @@
 .player-image{
   width: 245px;
   height: 200px;
+  border-radius: 50px;
 }
 
 .player-likes-container{
