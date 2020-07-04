@@ -29,6 +29,7 @@ const PlayersCard = ({ player, updateLikes }) => {
     const { _id, first_name, last_name, image, likes } = player;
 
     return (
+        <Link to={`/players/${_id}`} >
             <div>
                 <Card className="player-card">
                     <Image className="player-image" src={image} alt="players picture" />
@@ -38,6 +39,7 @@ const PlayersCard = ({ player, updateLikes }) => {
                     </div>
                 </Card>
             </div>
+        </Link>
     );
 };
 

@@ -1,11 +1,13 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { Header } from 'semantic-ui-react';
 
 const HeaderContainer = () => {
     return (
         <div className="header-container">
-            <Header className="header-title">NBA Rating</Header>
+            <Link to="/">
+                <Header className="header-title">NBA Rating</Header>
+            </Link>
         </div>
     );
 };
