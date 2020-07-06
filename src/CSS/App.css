@@ -9,14 +9,90 @@
 }
 
 /* HEADER */
+.header-container{
+  background-color: #ffffff;
+  padding: 25px;
+}
+
+.header-container a{
+  text-decoration: none !important;
+}
+
+/* header styling NBA Rating */
 .header-title{
   font-size: 30px;
   text-align: left;
   font-family: 'Krona One';
-  color: #e5b63c;
-  background-color: #13116b;
-  padding: 20px;
-  text-decoration: none !important;
+  color: #000000;
+  background-color: #ffffff;
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+.sidebar-container-btn{
+  display: flex;
+  align-items: center;
+}
+
+/* sidebar open button */
+.openbtn{
+  cursor: pointer;
+  font-size: 30px;
+  background-color: #efefef;
+  color: #000000;
+  border: none;
+}
+
+.openbtn:hover{
+  background-color: #000000;
+  color: #efefef;
+}
+
+/* change styling of sidebar when screens are smaller than 450px */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+/* sidebar styling */
+.sidebar {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* sidebar inner text styling */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #e4e3e3;
+  font-family: 'Krona One';
+  display: block;
+  transition: 0.3s;
+  text-align: left;
+}
+
+.sidebar a:hover{
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+/* sidebar closing button styling */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 /* HOME PAGE */

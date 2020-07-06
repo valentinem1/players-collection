@@ -6,6 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## [Backend repo](https://github.com/valentinem1/ExpressAPI)
 <br />
 
+## [Trello Board](https://trello.com/b/aQsIulBZ/nba-rating)
+<br />
+
 This project focuses on practicing using Express/Mongoose/MongoDB.
 
 ## Prerequisites
