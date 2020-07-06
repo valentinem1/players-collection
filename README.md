@@ -55,6 +55,7 @@ Frontend setup:
 Backend setup:
 - Clone this following repo here: [Backend Repo](https://github.com/valentinem1/ExpressAPI) and `cd` into it
 - Run `npm install` to install all dependencies
+- Run `npm start` to run the server
 - Ensure is is running locally on http://localhost:3000 to view in the browser
 
 ## Routes

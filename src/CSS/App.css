@@ -72,7 +72,7 @@
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 23px;
   color: #e4e3e3;
   font-family: 'Krona One';
   display: block;
@@ -83,7 +83,7 @@
 .sidebar a:hover{
   color: #ffffff;
   font-weight: bold;
-  font-size: 27px;
+  font-size: 25px;
 }
 
 /* sidebar closing button styling */
@@ -103,6 +103,57 @@
   margin: auto;
   margin-top: 50px;
   width: 500px;
+}
+
+.home-page-about{
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  margin-top: 20px;
+  letter-spacing: .15em;
+  font-size: 20px;
+  width: 490px;
+  animation: 
+    typing 5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 490px }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.explore-btn{
+  background-color: #e4e3e3;
+  font-family: monospace;
+  margin-top: 30px;
+}
+
+.explore-btn a{
+  text-decoration: none;
+  color: #000000;
+}
+
+.arrow-container{
+  margin-top: 10px;
+}
+
+.arrow-up-desc{
+  font-family: monospace;
+  font-size: 15px;
+}
+
+#arrow-up{
+  font-size: 25px;
 }
 
 /* PLAYERS COLLECTION PAGE */

@@ -24,7 +24,7 @@ const HeaderContainer = () => {
             </div>
 
             <div className="sidebar" id="mysidebar">
-                <Link className="closebtn" onClick={handleSidebar}>×</Link>
+                <Link to="" className="closebtn" onClick={handleSidebar}>×</Link>
                 <Link to="/" onClick={handleSidebar}>Home</Link>
                 <Link to="/players" onClick={handleSidebar}>Players</Link>
                 <Link to="/teams" onClick={handleSidebar}>Teams</Link>
