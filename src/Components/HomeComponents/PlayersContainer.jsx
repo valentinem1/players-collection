@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateMetadata }  from '../../Actions/metadataAction';
 import { Button, Table} from 'semantic-ui-react';
-import ProjectCard from './PlayersCard';
 
 const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
 
     const { current_page, total_pages } = metadataState;
-
-    // const playersArr =  playersState ? playersState.map(player => <ProjectCard key={player._id} player={player} />) : null
 
     const handleForwardPagination = (evt) => {
         evt.preventDefault();
