@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
 
 const PlayersShowContainer = (props) => {
-
-    const player = props.players ? props.players.find(player => player._id === props.match.params.id) : null
+    const player = props.players ? props.players.find(player => player._id === props.routerProps.match.params.id) : null
 
     if(player){
         return (

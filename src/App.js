@@ -15,9 +15,9 @@ import PlayersShowContainer from './Components/PlayersComponents/PlayersShowCont
 
 import './CSS/App.css';
 
-const App = ({ setPlayers, setMetadata, metadataState }) => {
+const App = (props) => {
 
-  const { current_page } = metadataState;
+  const { current_page } = props.metadataState;
 
   // fetch data from backend
   useEffect (() => {
@@ -26,10 +26,12 @@ const App = ({ setPlayers, setMetadata, metadataState }) => {
       .then(data => {
         // set the state to the data back from the backend
         // console.log(data.metadata);
-        setMetadata(data.metadata);
-        setPlayers(data.players);
+        props.setMetadata(data.metadata);
+        props.setPlayers(data.players);
       });
   }, [current_page]);
+
+  // console.log();
 
   return (
     <div className="App">
@@ -37,7 +39,8 @@ const App = ({ setPlayers, setMetadata, metadataState }) => {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path='/players' component={ PlayersContainer } />
-          <Route path="/players/:id" component={ PlayersShowContainer } />
+          <Route path="/players/:id" render={(routerProps) => Object.keys(props.match.params).length === 0 ? <h2 className="404-error">404 Error - Page not found</h2> : <PlayersShowContainer routerProps={routerProps} />} />
+          <Route render={() => <h2 className="404-error">404 Error - Page not found</h2>} />
         </Switch>
         <FooterContainer />
     </div>
