@@ -31,15 +31,13 @@ const App = (props) => {
       });
   }, [current_page]);
 
-  // console.log();
-
   return (
     <div className="App">
         <HeaderContainer />
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path='/players' component={ PlayersContainer } />
-          <Route path="/players/:id" render={(routerProps) => Object.keys(props.match.params).length === 0 ? <h2 className="404-error">404 Error - Page not found</h2> : <PlayersShowContainer routerProps={routerProps} />} />
+          <Route path="/players/:id" render={(routerProps) => <PlayersShowContainer routerProps={routerProps} />} />
           <Route render={() => <h2 className="404-error">404 Error - Page not found</h2>} />
         </Switch>
         <FooterContainer />

@@ -30,47 +30,22 @@
 }
 
 /* PLAYERS COLLECTION PAGE */
-.players-container{
-  display: flex;
-  flex-flow: row wrap;
-  margin-left: 30px;
-  margin-top: 50px;
-}
-
-.player-card{
-  margin: 15px;
-}
-
-.player-header{
-  font-family: 'Krona One';
-}
-
-.player-image{
-  width: 245px;
-  height: 200px;
-  border-radius: 50px;
-}
-
-.player-likes-container{
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-
-.player-likes-btn{
+.players-table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
   margin: auto;
-  margin-top: 10px;
-  border: solid 1.5px;
-  border-radius: 5px;
-  background-color: #f3efef;
-  border-color: #f3efef;
-  padding: 3px 15px;
+  margin-top: 70px;
 }
 
-.player-likes-btn:hover{
-  cursor: pointer;
-  background-color: #e6e3e1;
-  border-color: #e6e3e1;
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:hover{
+  background-color: #f1f1f1;
 }
 
 .pagination-container{
