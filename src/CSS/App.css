@@ -27,6 +27,7 @@
   background-color: #ffffff;
   margin-left: 40px;
   margin-top: 5px;
+  transition: 0.5s;
 }
 
 .sidebar-container-btn{
@@ -57,7 +58,7 @@
 /* sidebar styling */
 .sidebar {
   height: 100%;
-  width: 0px;
+  width: 16%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -83,30 +84,55 @@
 .sidebar a:hover{
   color: #ffffff;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 /* sidebar closing button styling */
-.sidebar .closebtn {
+.closebtn {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 40px;
   margin-left: 50px;
 }
-.header-container{
-  transition: margin-left .5s;
-    padding: 16px;
+
+/* class when sidebar is closed */
+.closed-sidebar{
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.closed-sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #e4e3e3;
+  font-family: 'Krona One';
+  display: block;
+  transition: 0.3s;
+  text-align: left;
 }
 
 /* HOME PAGE */
-.home-page-header{
-  font-size: 60px;
+.home-page-container{
+  transition: 0.5s
+}
+
+.home-page-title{
+  font-size: 50px;
   font-family: 'Krona One';
   text-align: center;
   margin: auto;
   margin-top: 50px;
-  width: 45%;
+  width: 35%;
 }
 
 /* designed mobile first */
