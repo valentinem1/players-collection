@@ -49,7 +49,7 @@
 }
 
 /* change styling of sidebar when screens are smaller than 450px */
-@media screen and (max-height: 450px) {
+@media only screen and (max-width: 600px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
@@ -94,6 +94,10 @@
   font-size: 36px;
   margin-left: 50px;
 }
+.header-container{
+  transition: margin-left .5s;
+    padding: 16px;
+}
 
 /* HOME PAGE */
 .home-page-header{
@@ -102,9 +106,10 @@
   text-align: center;
   margin: auto;
   margin-top: 50px;
-  width: 500px;
+  width: 45%;
 }
 
+/* designed mobile first */
 .home-page-about{
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -114,16 +119,45 @@
   margin-top: 20px;
   letter-spacing: .15em;
   font-size: 20px;
-  width: 490px;
+  width: 34%;
   animation: 
     typing 5s steps(40, end),
     blink-caret .75s step-end infinite;
 }
 
+@media only screen and (max-width: 1200px){
+  .home-page-about{
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 992px){
+  .home-page-about{
+    width: 37.5%;
+    font-size: 15px;
+  }
+}
+
+/* resize for tablets */
+@media only screen and (max-width: 768px) {
+  .home-page-about{
+    width: 37.5%;
+    font-size: 15px;
+  }
+}
+
+/* resize for larges phones/tablets */
+/* @media only screen and (min-width: 600px) {
+  .home-page-about{
+    width: 34%;
+    font-size: 20px;
+  }
+} */
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 490px }
+  to { width: 37% }
 }
 
 /* The typewriter cursor effect */
@@ -203,7 +237,7 @@ tr:hover{
   border-top: 10px solid #000000;
   margin: auto;
   margin-top: 200px;
-  width: 80px;
+  width: 25%;
   height: 80px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
