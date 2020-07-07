@@ -1,17 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { openSidebar } from '../Actions/sidebarActions';
 import { Link } from 'react-router-dom';
-import { Header, Button } from 'semantic-ui-react'
+import { Header, Button } from 'semantic-ui-react';
+import Sidebar from './Sidebar';
 
+const HeaderContainer = (props) => {
 
-const HeaderContainer = () => {
+    // let sidebar = document.getElementById('mysidebar');
+    // let homePageHeader = document.getElementById('home-page-header');
+    // let pageHeader = document.getElementById('header-title');
 
     // toggle sidebar
     const handleSidebar = () => {
-        let sidebar = document.getElementById('mysidebar');
+        props.openSidebar(true);
 
-        if(sidebar.style.width === "250px"){
-            return sidebar.style.width = "0"
-        } return sidebar.style.width = "250px"
+        // sidebar.style.width = "18%"
+        // homePageHeader.style.marginLeft = "250px"
+        // homePageHeader.style.transition = "2s"
+        // pageHeader.style.marginLeft = "250px"
+        // pageHeader.style.transition = "0.5s"
     }
 
     return (
@@ -19,19 +27,18 @@ const HeaderContainer = () => {
             <div className="sidebar-container-btn">
                 <Button className="openbtn" onClick={handleSidebar}>☰</Button>
                 <Link to="/">
-                    <Header className="header-title">NBA Rating</Header>
+                    <Header style={props.sidebar ? {marginLeft: "250px"} : {}} className="header-title">NBA Rating</Header>
                 </Link>
-            </div>
-
-            <div className="sidebar" id="mysidebar">
-                <Link to="" className="closebtn" onClick={handleSidebar}>×</Link>
-                <Link to="/" onClick={handleSidebar}>Home</Link>
-                <Link to="/players" onClick={handleSidebar}>Players</Link>
-                <Link to="/teams" onClick={handleSidebar}>Teams</Link>
-            </div>
-            
+            </div>  
+            <Sidebar />          
         </div>
     );
 };
 
-export default HeaderContainer;
+const mapStateToProps = (state) => {
+    return{
+        sidebar: state.sidebar.active
+    };
+};
+
+export default connect(mapStateToProps, { openSidebar })(HeaderContainer);
