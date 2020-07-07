@@ -1,13 +1,6 @@
-export const openSidebar = (data) => {
+export const toggleSidebar = (data) => {
     return{
-        type: "OPEN SIDEBAR",
-        data
-    }
-}
-
-export const closeSidebar = (data) => {
-    return{
-        type: "CLOSE SIDEBAR",
+        type: "TOGGLE SIDEBAR",
         data
     }
 }
