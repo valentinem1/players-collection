@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Header, Button, Image } from 'semantic-ui-react';
-import greekFreak from '../images/greek-freak.svg';
+import greekFreak from '../../images/greek-freak.svg';
 
 const Home = (props) => {
     

@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 /* Imports font from google font */
 @font-face{
   font-family: 'Krona One';
@@ -11,7 +12,7 @@
 /* HEADER */
 .header-container{
   background-color: #ffffff;
-  padding: 25px;
+  padding: 20px;
 }
 
 .header-container a{
@@ -126,7 +127,18 @@
 
 /* HOME PAGE */
 .home-page-container{
+  opacity: 0;
+  animation-name: fadeInAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards;
   transition: 0.5s
+}
+
+@keyframes fadeInAnimation { 
+  0% { opacity: 0; } 
+  100% { opacity: 1; }
 }
 
 .greek-freak-logo{
@@ -159,6 +171,19 @@
     blink-caret .75s step-end infinite;
 }
 
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 34% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/* RESPONSIVENESS */
 @media only screen and (max-width: 1200px){
   .home-page-about{
     width: 48%;
@@ -178,18 +203,6 @@
     width: 37.5%;
     font-size: 15px;
   }
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 34% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
 }
 
 .explore-btn{
@@ -217,11 +230,16 @@
 }
 
 /* PLAYERS COLLECTION PAGE */
+.table-image-container{
+  display: flex;
+  align-items: center;
+}
+
 .players-table{
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 70%;
-  margin: auto;
+  width: 50%;
+  margin-left: 10%;
   margin-top: 70px;
 }
 
@@ -233,6 +251,11 @@ td, th {
 
 tr:hover{
   background-color: #f1f1f1;
+}
+
+.player-table-image{
+  width: 25%;
+  margin-left: 10%;
 }
 
 .pagination-container{
@@ -249,9 +272,6 @@ tr:hover{
   font-size: 20px;
   border: none;
   background-color: #ffffff !important;
-}
-
-.pagination-btn:hover{
   cursor: pointer;
 }
 
