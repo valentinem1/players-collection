@@ -20,7 +20,7 @@ const HeaderContainer = (props) => {
             <div className="sidebar-container-btn">
                 <Button className="openbtn" onClick={handleSidebar}>☰</Button>
                 <Link to="/">
-                    <Header style={props.sidebar ? {marginLeft: "85%"} : {}} className="header-title">NBA Rating</Header>
+                    <Header style={props.sidebar ? {marginLeft: "100%"} : {}} className="header-title">NBA Rating</Header>
                 </Link>
             </div>  
             <Sidebar refProps={ref} />          

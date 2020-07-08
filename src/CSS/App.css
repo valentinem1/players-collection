@@ -129,12 +129,17 @@
   transition: 0.5s
 }
 
+.greek-freak-logo{
+  width: 25%;
+  margin-top: 20px;
+}
+
 .home-page-title{
   font-size: 50px;
   font-family: 'Krona One';
   text-align: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 35%;
 }
 
@@ -175,18 +180,10 @@
   }
 }
 
-/* resize for larges phones/tablets */
-/* @media only screen and (min-width: 600px) {
-  .home-page-about{
-    width: 34%;
-    font-size: 20px;
-  }
-} */
-
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 37% }
+  to { width: 34% }
 }
 
 /* The typewriter cursor effect */
