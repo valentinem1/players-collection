@@ -1,27 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { toggleSidebar } from '../Actions/sidebarActions';
+import { toggleSidebar } from '../../Actions/sidebarActions';
 
 const Sidebar = (props) => {
-
-    // const ref = useRef();
-
-    const handleClick = (evt) => {
-        if (props.refProps.current && !props.refProps.current.contains(evt.target)) {
-            props.toggleSidebar(false);
-        }
-    }
-    
-    useEffect(() => {
-        document.addEventListener("click", handleClick);
-        
-        // allows to only close sidebar when clicking outside the sidebar or close btn.
-        // remove event listener so when clicking anywhere on page it does not toggle the sidebar.
-        return () => {
-            document.removeEventListener("click", handleClick);
-        }
-    });
 
     const handleCloseSidebar = () => {
         props.toggleSidebar(false);

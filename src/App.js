@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import { setPlayers } from './Actions/playersAction';
 import { setMetadata } from './Actions/metadataAction'
 
-import Home from './Components/Home';
-import PlayersContainer from './Components/HomeComponents/PlayersContainer';
-import HeaderContainer from './Components/HeaderContainer';
-import FooterContainer from './Components/FooterContainer';
+import Home from './Components/HomeComponents/Home';
+import HeaderContainer from './Components/HomeComponents/HeaderContainer';
+import FooterContainer from './Components/HomeComponents/FooterContainer';
 
-import PlayersShowContainer from './Components/PlayersComponents/PlayersShowContainer'
+import PlayersContainer from './Components/PlayersComponents/PlayersContainer';
+import PlayersShowContainer from './Components/PlayersComponents/PlayersShowContainer';
 
 import './CSS/App.css';
 
