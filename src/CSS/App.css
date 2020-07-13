@@ -281,9 +281,9 @@ tr:hover{
   border: 10px solid #f3f3f3;
   border-radius: 50%;
   border-top: 10px solid #000000;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 200px;
-  width: 25%;
+  width: 80px;
   height: 80px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
@@ -302,7 +302,7 @@ tr:hover{
   margin-top: 622px;
   padding: 20px 20px 5px 20px;
   background-color: #e6e3e1;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .footer-paragraph{
