@@ -1,5 +1,5 @@
 const initialState = {
-
+    current_page: 1
 }
 
 const metadataReducer = (state=initialState, action) => {
@@ -9,7 +9,6 @@ const metadataReducer = (state=initialState, action) => {
             return action.data;
 
         case "UPDATE METADATA":
-            // console.log(state.current_page)
             return {...state, current_page: action.current_page};
 
         default:
