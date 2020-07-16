@@ -32,7 +32,7 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
                     <Table.Body key={player._id}>
                     <Table.Row>
                         <Table.Cell><Link to={`/players/${player._id}`}>{player.first_name + ' ' + player.last_name}</Link></Table.Cell>
-                        <Table.Cell>{player.team}</Table.Cell>
+                        <Table.Cell>{player.team.full_name ? player.team.full_name : player.team}</Table.Cell>
                     </Table.Row>
                     </Table.Body> )}
                 </Table>

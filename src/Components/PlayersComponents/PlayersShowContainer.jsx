@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Header } from 'semantic-ui-react';
+import { Header, Table, Tab } from 'semantic-ui-react';
+
+import GameTable from './PlayersStatsTablesComponents/GameTable';
+import FieldGoalsTable from './PlayersStatsTablesComponents/FieldGoalsTable';
+import FreeThrowTable from './PlayersStatsTablesComponents/FreeThrowTable';
+import ReboundsTable from './PlayersStatsTablesComponents/ReboundsTable';
+import AssistsStealsTable from './PlayersStatsTablesComponents/AssistsStealsTable';
+import TurnoversFouls from './PlayersStatsTablesComponents/TurnoversFouls';
 
 const PlayersShowContainer = (props) => {
 
@@ -10,12 +17,20 @@ const PlayersShowContainer = (props) => {
         .then(player => console.log(player));
     }, []);
 
+    // find corresponding player from url in state
+    // to display the players' info
     const player = props.players ? props.players.find(player => player._id === props.routerProps.match.params.id) : null
 
     if(player){
         return (
             <div>
-                <Header>{`${player.first_name} ${player.last_name}`}</Header>
+                <Header className="player-name-header">{`${player.first_name} ${player.last_name}`}</Header>
+                <GameTable player={player}/>
+                <FieldGoalsTable player={player}/>
+                <FreeThrowTable player={player}/>
+                <ReboundsTable player={player}/>
+                <AssistsStealsTable player={player} />
+                <TurnoversFouls player={player} />
             </div>
         );
     } return (
