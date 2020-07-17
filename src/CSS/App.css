@@ -294,6 +294,26 @@ tr:hover{
   100% { transform: rotate(360deg); }
 }
 
+.player-name-header{
+  font-family: arial, sans-serif;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.stats-header{
+  text-align: left;
+  margin-left: 4%;
+  margin-top: 50px;
+  font-family: arial, sans-serif;
+}
+
+.stats-table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin-left: 4%;
+  margin-top: 10px;
+}
+
 /* FOOTER */
 .footer-container{
   position: static;
