@@ -32,7 +32,8 @@ const App = (props) => {
   }, [current_page]);
 
   return (
-    <div className="App">
+    <div className="App" 
+      style={ props.darkMode ? { backgroundColor: '#3f3f3f', color: '#ccc', opacity: .8 } : {} } >
         <HeaderContainer />
         <Switch>
           <Route exact path="/" component={ Home } />
@@ -47,7 +48,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    metadataState: state.metadata
+    metadataState: state.metadata,
+    darkMode: state.darkMode.active
   }
 }
 

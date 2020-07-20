@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { toggleSidebar } from '../../Actions/sidebarActions';
+import { toggleDarkModeButton } from '../../Actions/darkModeAction';
 import { Link } from 'react-router-dom';
 import { Header, Button } from 'semantic-ui-react';
 import Sidebar from './Sidebar';
@@ -30,23 +31,52 @@ const HeaderContainer = (props) => {
         props.toggleSidebar(true);
     }
 
+    const handleToggleButton = (evt) => {
+        props.toggleDarkModeButton(evt.target.checked);
+    }
+
+    const toggleSidebarWithDarkMode = () => {
+        if(props.sidebar && !props.darkMode){
+            return { marginLeft: '100%' }
+        } else if(props.sidebar && props.darkMode){
+            return { 
+                backgroundColor: '#010101',
+                color: '#ccc',
+                marginLeft: '100%'
+            }
+        } else if(props.darkMode && !props.sidebar){
+            return {
+                backgroundColor: '#010101',
+                color: '#ccc'
+            }
+        }
+    }
+
+    console.log('dark mode', props.darkMode);
+    console.log('sidebar', props.sidebar);
+
     return (
-        <div ref={ref} className="header-container">
+        <div ref={ref} className="header-container" style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} } >
             <div className="sidebar-container-btn">
-                <Button className="openbtn" onClick={handleSidebar}>☰</Button>
+                <Button className="openbtn" onClick={handleSidebar} style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} }>☰</Button>
                 <Link to="/">
-                    <Header style={props.sidebar ? {marginLeft: "100%"} : {}} className="header-title">NBA Rating</Header>
+                    <Header style={toggleSidebarWithDarkMode()} className="header-title">NBA Rating</Header>
                 </Link>
             </div>  
-            <Sidebar />          
+            <Sidebar /> 
+            <label className="switch">
+                <input type="checkbox" onClick={handleToggleButton} checked={props.darkMode}/>
+                <span className="slider-btn"></span>
+            </label>        
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return{
-        sidebar: state.sidebar.active
+        sidebar: state.sidebar.active,
+        darkMode: state.darkMode.active
     };
 };
 
-export default connect(mapStateToProps, { toggleSidebar })(HeaderContainer);
+export default connect(mapStateToProps, { toggleSidebar, toggleDarkModeButton })(HeaderContainer);
