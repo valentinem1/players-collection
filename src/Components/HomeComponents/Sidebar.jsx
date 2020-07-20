@@ -21,7 +21,8 @@ const Sidebar = (props) => {
 
 const mapStateToProps = (state) => {
     return{
-        sidebar: state.sidebar.active
+        sidebar: state.sidebar.active,
+        darkMode: state.darkMode.active
     }
 }
 

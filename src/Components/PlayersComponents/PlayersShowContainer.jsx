@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Header, Table, Tab } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 
 import GameTable from './PlayersStatsTablesComponents/GameTable';
 import FieldGoalsTable from './PlayersStatsTablesComponents/FieldGoalsTable';
