@@ -13,6 +13,9 @@ import FooterContainer from './Components/HomeComponents/FooterContainer';
 import PlayersContainer from './Components/PlayersComponents/PlayersContainer';
 import PlayersShowContainer from './Components/PlayersComponents/PlayersShowContainer';
 
+import SeasonsListContainer from './Components/SeasonsComponents/SeasonsListContainer';
+import SeasonContainer from './Components/SeasonsComponents/SeasonContainer';
+
 import './CSS/App.css';
 
 const App = (props) => {
@@ -39,6 +42,8 @@ const App = (props) => {
           <Route exact path="/" component={ Home } />
           <Route exact path='/players' component={ PlayersContainer } />
           <Route path="/players/:id" render={(routerProps) => <PlayersShowContainer routerProps={routerProps} />} />
+          <Route exact path="/seasons" component={ SeasonsListContainer } />
+          <Route path="/seasons/:year" render={(routerProps) => <SeasonContainer routerProps={routerProps} />} />
           <Route render={() => <h2 className="404-error">404 Error - Page not found</h2>} />
         </Switch>
         <FooterContainer />

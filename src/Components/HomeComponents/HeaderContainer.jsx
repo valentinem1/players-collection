@@ -35,6 +35,7 @@ const HeaderContainer = (props) => {
         props.toggleDarkModeButton(evt.target.checked);
     }
 
+    // darkMode style
     const toggleSidebarWithDarkMode = () => {
         if(props.sidebar && !props.darkMode){
             return { marginLeft: '100%' }
@@ -51,9 +52,6 @@ const HeaderContainer = (props) => {
             }
         }
     }
-
-    console.log('dark mode', props.darkMode);
-    console.log('sidebar', props.sidebar);
 
     return (
         <div ref={ref} className="header-container" style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} } >

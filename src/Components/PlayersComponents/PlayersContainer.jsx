@@ -17,7 +17,7 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
         evt.preventDefault();
         updateMetadata(current_page - 1);
     }
-
+    
     return (
         <div>
             <div className="table-image-container">
@@ -39,7 +39,11 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
             </div>
             
             <div className="pagination-container">
-                <div className="divagination-text"><Button hidden={current_page === 1 ? true : false} onClick={handleBackwardPagination} className="pagination-btn" role='img' aria-label="heart emoji">←</Button> Page {current_page} of {total_pages}<Button onClick={handleForwardPagination} className="pagination-btn" role='img' aria-label="heart emoji">→</Button></div>
+                <div className="pagination-text">
+                    <Button hidden={ current_page === 1 ? true : false } onClick={ handleBackwardPagination } className="pagination-btn" role='img' aria-label="arrow emoji">←</Button> 
+                        Page {current_page} of {total_pages}
+                    <Button hidden={ current_page === total_pages ? true : false } onClick={ handleForwardPagination } className="pagination-btn" role='img' aria-label="arrow emoji">→</Button>
+                </div>
             </div>
         </div>
     ); 
