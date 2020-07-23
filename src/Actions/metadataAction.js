@@ -1,5 +1,4 @@
 export const setMetadata = (data) => {
-    // console.log(data);
     return {
         type: "SET METADATA",
         data
