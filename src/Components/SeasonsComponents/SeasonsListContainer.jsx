@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const SeasonsListContainer = (props) => {
 
-    let yearsArr = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
+    let seasonsArr = [2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010];
 
-    const year = yearsArr.map(year => <Link to={`seasons/${year}`} key={year}><li>{year}</li></Link>)
+    const seasons = seasonsArr.map(season => <Link to={`seasons/${season}`} key={season}><li className="seasons-list">{season}</li></Link>)
 
     return (
         <div>
             <ul>
-                {year}
+                {seasons}
             </ul>
         </div>
     );

@@ -160,7 +160,7 @@ input:checked + .slider-btn::before {
   margin-left: 50px;
 }
 
-/* class when sidebar is closed */
+/* class name when sidebar is closed */
 .closed-sidebar{
   height: 100%;
   width: 0px;
@@ -373,6 +373,26 @@ tr:hover{
   margin-left: 4%;
   margin-top: 10px;
 }
+
+/* SEASONS PAGE */
+.seasons-container{
+  text-decoration: none;
+}
+
+.seasons-list{
+  font-family: arial, sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+}
+
+.seasons-list:hover{
+  color: #313131;
+  font-size: 21px;
+}
+
+
 
 /* FOOTER */
 .footer-container{
