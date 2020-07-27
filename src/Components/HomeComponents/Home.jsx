@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Header, Button, Image } from 'semantic-ui-react';
 import greekFreak from '../../images/greek-freak.svg';
+import './CSS/home.css';
 
 const Home = (props) => {
     
     return (
-        <div style={props.sidebar ? {marginLeft: "250px"} : {}} className="home-page-container">
+        <div style={props.sidebar ? {marginTop: "250px"} : {}} className="home-page-container">
             <Header className="home-page-title" >Welcome to NBA rating</Header>
             <Image className="greek-freak-logo" src={greekFreak} alt="greek-freak-logo" />
             <div className="about-container">

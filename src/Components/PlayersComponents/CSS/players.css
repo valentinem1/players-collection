@@ -1,0 +1,80 @@
+/* PLAYERS COLLECTION PAGE */
+.table-image-container{
+    display: flex;
+    align-items: center;
+}
+
+.players-table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 70px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:hover{
+    background-color: #f1f1f1;
+}
+
+.pagination-container{
+    margin-top: 100px;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+.pagination-text{
+    font-size: 20px;
+    color: #666666;
+}
+
+.pagination-btn{
+    font-size: 20px;
+    border: none;
+    background-color: #ffffff !important;
+    cursor: pointer;
+}
+
+
+/* PLAYER PAGE */
+/* loading spinner  */
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #000000;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.player-name-header{
+    font-family: arial, sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.stats-header{
+    text-align: left;
+    margin-left: 4%;
+    margin-top: 50px;
+    font-family: arial, sans-serif;
+}
+
+.stats-table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin-left: 4%;
+    margin-top: 10px;
+}

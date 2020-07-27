@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './CSS/seasons.css';
 
 const SeasonsListContainer = (props) => {
 
@@ -9,7 +10,7 @@ const SeasonsListContainer = (props) => {
     const seasons = seasonsArr.map(season => <Link to={`seasons/${season}`} key={season}><li className="seasons-list">{season}</li></Link>)
 
     return (
-        <div>
+        <div className="seasons-container">
             <ul>
                 {seasons}
             </ul>

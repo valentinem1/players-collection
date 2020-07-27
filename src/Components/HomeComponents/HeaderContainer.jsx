@@ -5,6 +5,8 @@ import { toggleDarkModeButton } from '../../Actions/darkModeAction';
 import { Link } from 'react-router-dom';
 import { Header, Button } from 'semantic-ui-react';
 import Sidebar from './Sidebar';
+import './CSS/dark-mode.css';
+import './CSS/header.css';
 
 const HeaderContainer = (props) => {
 
@@ -28,44 +30,30 @@ const HeaderContainer = (props) => {
 
     // toggle sidebar
     const handleSidebar = () => {
-        props.toggleSidebar(true);
+        props.toggleSidebar(!props.sidebar);
     }
 
     const handleToggleButton = (evt) => {
         props.toggleDarkModeButton(evt.target.checked);
     }
 
-    // darkMode style
-    const toggleSidebarWithDarkMode = () => {
-        if(props.sidebar && !props.darkMode){
-            return { marginLeft: '100%' }
-        } else if(props.sidebar && props.darkMode){
-            return { 
-                backgroundColor: '#010101',
-                color: '#ccc',
-                marginLeft: '100%'
-            }
-        } else if(props.darkMode && !props.sidebar){
-            return {
-                backgroundColor: '#010101',
-                color: '#ccc'
-            }
-        }
+    const darkModeStyling = () => {
+        return props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {}
     }
 
     return (
-        <div ref={ref} className="header-container" style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} } >
-            <div className="sidebar-container-btn">
-                <Button className={ props.sidebar ? "hide-open-btn" : "openbtn"} onClick={handleSidebar} style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} }>☰</Button>
-                <Link to="/">
-                    <Header style={toggleSidebarWithDarkMode()} className="header-title">NBA Rating</Header>
-                </Link>
-            </div>  
-            <Sidebar /> 
-            <label className="switch">
-                <input type="checkbox" onClick={handleToggleButton} checked={props.darkMode}/>
-                <span className="slider-btn"></span>
-            </label>        
+        <div ref={ref} className="header-container" style={darkModeStyling()} >
+            <Link to="/">
+                <Header style={darkModeStyling()} className="header-title">NBA Rating</Header>
+            </Link>
+            <Sidebar />
+            <div className='sidebar-container-btn'>
+                <label className="switch">
+                    <input type="checkbox" onClick={handleToggleButton} checked={props.darkMode}/>
+                    <span className="slider-btn"></span>
+                </label>
+                <Button className="openbtn" onClick={handleSidebar} style={darkModeStyling()}>☰</Button>
+            </div>
         </div>
     );
 };
