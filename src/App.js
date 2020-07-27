@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { setPlayers } from './Actions/playersAction';
-import { setMetadata } from './Actions/metadataAction'
+import { setMetadata } from './Actions/metadataAction';
 
 import Home from './Components/HomeComponents/Home';
 import HeaderContainer from './Components/HomeComponents/HeaderContainer';

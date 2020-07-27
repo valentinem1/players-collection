@@ -24,7 +24,7 @@ const PlayersShowContainer = (props) => {
     if(player){
         return (
             <div>
-                <Header className="player-name-header">{`${player.first_name} ${player.last_name}`}</Header>
+                <Header className="player-name-header">{`${player.first_name} ${player.last_name ? player.last_name : ''}`}</Header>
                 <GameTable player={player}/>
                 <FieldGoalsTable player={player}/>
                 <FreeThrowTable player={player}/>

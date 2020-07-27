@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateMetadata }  from '../../Actions/metadataAction';
-import { Button, Image, Table} from 'semantic-ui-react';
+import { Button, Table} from 'semantic-ui-react';
 
 const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
 
