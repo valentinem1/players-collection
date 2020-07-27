@@ -13,6 +13,7 @@ const Sidebar = (props) => {
         <div id="sidebar" className={!props.sidebar ? 'closed-sidebar' : "sidebar"}>
             <Link to="" className="closebtn" onClick={handleCloseSidebar}>×</Link>
             <Link to="/" onClick={handleCloseSidebar}>Home</Link>
+            <Link to="/seasons" onClick={handleCloseSidebar}>Seasons</Link>
             <Link to="/players" onClick={handleCloseSidebar}>Players</Link>
             <Link to="/teams" onClick={handleCloseSidebar}>Teams</Link>
         </div>
