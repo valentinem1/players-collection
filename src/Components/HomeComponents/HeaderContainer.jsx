@@ -56,7 +56,7 @@ const HeaderContainer = (props) => {
     return (
         <div ref={ref} className="header-container" style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} } >
             <div className="sidebar-container-btn">
-                <Button className="openbtn" onClick={handleSidebar} style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} }>☰</Button>
+                <Button className={ props.sidebar ? "hide-open-btn" : "openbtn"} onClick={handleSidebar} style={ props.darkMode ? { backgroundColor: '#010101', color: '#ccc' } : {} }>☰</Button>
                 <Link to="/">
                     <Header style={toggleSidebarWithDarkMode()} className="header-title">NBA Rating</Header>
                 </Link>
