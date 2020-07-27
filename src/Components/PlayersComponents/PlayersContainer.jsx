@@ -11,13 +11,13 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
     const handleForwardPagination = (evt) => {
         evt.preventDefault();
         updateMetadata(current_page + 1);
-    }
+    };
 
     const handleBackwardPagination = (evt) => {
         evt.preventDefault();
         updateMetadata(current_page - 1);
-    }
-    
+    };
+
     return (
         <div>
             <div className="table-image-container">
@@ -32,7 +32,7 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
                     <Table.Body key={player._id}>
                     <Table.Row>
                         <Table.Cell><Link to={`/players/${player._id}`}>{player.full_name}</Link></Table.Cell>
-                        {/* <Table.Cell>{player.team.full_name ? player.team.full_name : player.team}</Table.Cell> */}
+                        <Table.Cell>{player.team.full_name ? player.team.full_name : player.team}</Table.Cell>
                     </Table.Row>
                     </Table.Body> )}
                 </Table>
