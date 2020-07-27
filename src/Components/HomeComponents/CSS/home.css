@@ -1,0 +1,119 @@
+/* HOME PAGE */
+.home-page-container{
+    opacity: 0;
+    animation-name: fadeInAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
+    transition: 0.5s
+}
+
+@keyframes fadeInAnimation { 
+    0% { opacity: 0; } 
+    100% { opacity: 1; }
+}
+
+.greek-freak-logo{
+    width: 25%;
+    margin-top: 20px;
+}
+
+.home-page-title{
+    font-size: 50px;
+    font-family: 'Krona One';
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 35%;
+}
+
+  /* designed mobile first */
+.home-page-about{
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    margin-top: 20px;
+    letter-spacing: .15em;
+    font-size: 20px;
+    width: 34%;
+    animation: 
+        typing 5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+  /* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 34% }
+}
+
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+  /* RESPONSIVENESS */
+@media only screen and (max-width: 1200px){
+    .home-page-about{
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .home-page-about{
+        width: 37.5%;
+        font-size: 15px;
+    }
+}
+
+  /* resize for tablets */
+@media only screen and (max-width: 768px) {
+    .home-page-about{
+        width: 37.5%;
+        font-size: 15px;
+    }
+}
+
+.explore-btn{
+    background-color: #e4e3e3;
+    font-family: monospace;
+    margin-top: 30px;
+}
+
+.explore-btn a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.arrow-container{
+    margin-top: 10px;
+}
+
+.arrow-up-desc{
+    font-family: monospace;
+    font-size: 15px;
+}
+
+#arrow-up{
+    font-size: 25px;
+}
+
+
+  /* FOOTER */
+.footer-container{
+    position: static;
+    left: 0;
+    bottom: 0;
+    margin-top: 622px;
+    padding: 20px 20px 5px 20px;
+    background-color: #e6e3e1;
+    /* width: 100%; */
+}
+
+.footer-paragraph{
+    font-size: 15px;
+}
