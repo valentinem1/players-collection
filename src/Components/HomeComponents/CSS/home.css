@@ -56,28 +56,6 @@
     50% { border-color: orange; }
 }
 
-  /* RESPONSIVENESS */
-@media only screen and (max-width: 1200px){
-    .home-page-about{
-        width: 48%;
-    }
-}
-
-@media only screen and (max-width: 992px){
-    .home-page-about{
-        width: 37.5%;
-        font-size: 15px;
-    }
-}
-
-  /* resize for tablets */
-@media only screen and (max-width: 768px) {
-    .home-page-about{
-        width: 37.5%;
-        font-size: 15px;
-    }
-}
-
 .explore-btn{
     background-color: #e4e3e3;
     font-family: monospace;
@@ -101,7 +79,6 @@
 #arrow-up{
     font-size: 25px;
 }
-
 
   /* FOOTER */
 .footer-container{

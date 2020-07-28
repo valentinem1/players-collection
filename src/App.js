@@ -17,6 +17,7 @@ import SeasonsListContainer from './Components/SeasonsComponents/SeasonsListCont
 import SeasonContainer from './Components/SeasonsComponents/SeasonContainer';
 
 import './CSS/App.css';
+import './Components/HomeComponents/CSS/home.css';
 
 const App = (props) => {
 

@@ -7,25 +7,11 @@
     border: none;
     padding: 1px 8px 4px 8px;
     margin-left: 30px;
+    border: 0px solid;
 }
 
 .openbtn:hover{
-    background-color: #efefef;
-    color: #1d1d1d;
-}
-
-  /* change styling of sidebar when screens are smaller than 450px */
-@media only screen and (max-width: 600px) {
-  .sidebar {overflow-y: auto;}
-  .sidebar a {font-size: 20px}
-  .sidebar .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-    /* .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-    .header-title {font-size: 20px;} */
+    color: #ffffff;
 }
 
   /* sidebar styling */
@@ -36,7 +22,7 @@
     z-index: 1;
     top: 85px;
     left: 0;
-    background-color: #0e0e0edc;
+    background-color: #1d1d1d;
     overflow-y: hidden;
     transition: 0.5s;
     padding: 40px 0;
@@ -78,7 +64,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #1d1d1d;
     overflow-y: hidden;
     transition: 0.5s;
     margin-top: 65px;

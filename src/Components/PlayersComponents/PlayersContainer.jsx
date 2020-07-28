@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateMetadata }  from '../../Actions/metadataAction';
 import { Button, Table} from 'semantic-ui-react';
+import './CSS/players.css';
 
 const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
 
@@ -18,9 +19,22 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
         updateMetadata(current_page - 1);
     };
 
+    // const uniqPlayer = () => {
+    //     if(playersState.length){
+    //         for(let i = 0; i <= playersState.length-1; i++){
+    //             if(playersState[i+1]){
+    //                 if(playersState[i].full_name !== playersState[i+1].full_name){
+    //                     console.log(playersState[i].full_name)
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // uniqPlayer();
+
     return (
         <div>
-            <div className="table-image-container">
+            <div className="table-container">
                 <Table striped className="players-table">
                     <Table.Header>
                     <Table.Row>
