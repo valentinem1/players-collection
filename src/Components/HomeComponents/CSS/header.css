@@ -1,9 +1,10 @@
 /* HEADER */
 .header-container{
     background-color: #1d1d1d;
-    padding: 20px;
+    padding: 20px 0px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .header-container a{
@@ -16,8 +17,7 @@
     text-align: left;
     font-family: 'Krona One';
     color: #efefef;
-    /* background-color: #ffffff; */
-    margin-left: 20%;
+    margin-left: 15%;
     width: 100%;
     max-width: 100%;
     margin-top: 5px;

@@ -7,6 +7,7 @@ import { Header, Button } from 'semantic-ui-react';
 import Sidebar from './Sidebar';
 import './CSS/dark-mode.css';
 import './CSS/header.css';
+import './CSS/home.css';
 
 const HeaderContainer = (props) => {
 
@@ -49,7 +50,7 @@ const HeaderContainer = (props) => {
             <Sidebar />
             <div className='sidebar-container-btn'>
                 <label className="switch">
-                    <input type="checkbox" onClick={handleToggleButton} checked={props.darkMode}/>
+                    <input type="checkbox" onChange={handleToggleButton} checked={props.darkMode}/>
                     <span className="slider-btn"></span>
                 </label>
                 <Button className="openbtn" onClick={handleSidebar} style={darkModeStyling()}>☰</Button>

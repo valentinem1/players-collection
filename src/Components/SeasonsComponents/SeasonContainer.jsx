@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './CSS/seasons.css';
 
 import { Table, Button } from 'semantic-ui-react';
 
@@ -31,7 +32,7 @@ const SeasonContainer = (props) => {
     };
 
     return (
-        <div className="seasons-container">
+        <div className="table-container">
             <Table striped className="players-table">
                 <Table.Header>
                 <Table.Row>

@@ -7,3 +7,54 @@
   font-family: 'Krona One';
   src: url('https://fonts.googleapis.com/css?family=Krona+One')
 }
+
+@media only screen and (max-width: 768px) {
+  body{
+    width: 768px;
+    max-width: 768px;
+    text-align: center;
+  }
+
+  .home-page-title{
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+  }
+
+  .home-page-about{
+    width: 50.5%;
+    font-size: 15px;
+    animation: 
+      typing 5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 50.5% }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  .header-title{
+      font-size: 17px;
+      width: 130px;
+  }
+
+  .sidebar-container-btn{
+    margin-left: 65%;
+  }
+
+  .sidebar {overflow-y: auto;}
+  .sidebar a {font-size: 20px}
+  .sidebar .closebtn {
+    font-size: 25px;
+    top: 15px;
+    right: 35px;
+  }
+}
