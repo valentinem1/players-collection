@@ -42,7 +42,7 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path='/players' component={ PlayersContainer } />
-          <Route path="/players/:id" render={(routerProps) => <PlayersShowContainer routerProps={routerProps} />} />
+          <Route path="/players/:name" render={(routerProps) => <PlayersShowContainer routerProps={routerProps} />} />
           <Route exact path="/seasons" component={ SeasonsListContainer } />
           <Route path="/seasons/:year" render={(routerProps) => <SeasonContainer routerProps={routerProps} />} />
           <Route render={() => <h2 className="404-error">404 Error - Page not found</h2>} />
