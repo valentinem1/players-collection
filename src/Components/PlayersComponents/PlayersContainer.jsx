@@ -36,7 +36,7 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
         <div>
             <div className="table-container">
                 <Table striped className="players-table">
-                    <Table.Header>
+                    <Table.Header className="table-header">
                     <Table.Row>
                         <Table.HeaderCell>Player</Table.HeaderCell>
                         <Table.HeaderCell>Team</Table.HeaderCell>
