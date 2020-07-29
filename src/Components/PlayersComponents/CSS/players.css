@@ -67,7 +67,7 @@ tr:hover{
 
 .stats-header{
     text-align: left;
-    margin-left: 4%;
+    margin-left: 30px;
     margin-top: 50px;
     font-family: arial, sans-serif;
 }
@@ -75,6 +75,7 @@ tr:hover{
 .stats-table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    margin-left: 4%;
+    /* margin-left: 30px; */
     margin-top: 10px;
+    width: 50%;
 }

@@ -45,7 +45,7 @@ const PlayersContainer = ({ playersState, metadataState, updateMetadata }) => {
                 {playersState.map(player => 
                     <Table.Body key={player._id}>
                     <Table.Row>
-                        <Table.Cell><Link to={`/players/${player._id}`}>{player.full_name}</Link></Table.Cell>
+                        <Table.Cell><Link to={`/players/${player.full_name}`}>{player.full_name}</Link></Table.Cell>
                         <Table.Cell>{player.team.full_name ? player.team.full_name : player.team}</Table.Cell>
                     </Table.Row>
                     </Table.Body> )}
