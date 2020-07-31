@@ -81,6 +81,10 @@ tr:hover{
     padding: 8px 10px !important;
 }
 
+.players-table td{
+    padding: 6px 10px;
+}
+
 td{
     font-size: 15px;
     padding: 4px 8px;

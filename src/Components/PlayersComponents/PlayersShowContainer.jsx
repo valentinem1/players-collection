@@ -53,7 +53,7 @@ const PlayersShowContainer = (props) => {
                     {props.playerStats.reverse().map(player =>
                         <Table.Body key={player._id}>
                             <Table.Row>
-                                <Table.Cell>{player.year}-{parseInt(player.year.toString().slice(2))-1}</Table.Cell>
+                                <Table.Cell>{player.year}-{player.year.toString().slice(2)-1 < 10 ? `0${player.year.toString().slice(2)-1}` : player.year.toString().slice(2)-1}</Table.Cell>
                                 <Table.Cell>{player.position}</Table.Cell>
                                 <Table.Cell>{player.stats.game}</Table.Cell>
                                 <Table.Cell>{player.stats.gameStarted}</Table.Cell>
