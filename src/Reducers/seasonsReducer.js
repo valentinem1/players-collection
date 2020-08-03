@@ -16,10 +16,10 @@ const seasonsReducer = (state=initialState, action) => {
 
         case "UPDATE SEASONS METADATA":
             return { ...state, 
-                metadata: {
-                    ...state.metadata, current_page: action.current_page
+                    metadata: {
+                        ...state.metadata, current_page: action.current_page
+                    }
                 }
-            }
 
         default:
             return state;

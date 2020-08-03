@@ -8,10 +8,6 @@ const playersReducer = (state=initialState, action) => {
         case "SET PLAYERS":
             return action.players;
 
-        case "INCREASE LIKES":
-            const updatedLikes = state.map(player => player._id === action.player._id ? action.player : player);
-            return updatedLikes;
-
         default:
             return state;
     }

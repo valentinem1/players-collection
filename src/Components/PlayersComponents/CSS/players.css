@@ -73,6 +73,14 @@ tr:hover{
     width: 50%;
 }
 
+.player-table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    /* margin: auto; */
+    margin-left: 61px;
+    width: 90%;
+}
+
 .table-header{
     background-color: #e6e6e6;
 }
