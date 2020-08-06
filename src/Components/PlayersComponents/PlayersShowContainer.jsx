@@ -1,42 +1,25 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Header, Table, Button } from 'semantic-ui-react';
+import { Header, Table } from 'semantic-ui-react';
 import './CSS/players.css';
 
-import TableContainer from './TableContainer';
-
 import { setPlayerStats } from '../../Actions/playerStatsActions';
-import { setSeasonsPlayers, setSeasonsMetadata, updateSeasonsMetadata } from '../../Actions/seasonsAction';
 
 const PlayersShowContainer = (props) => {
-
-    const { current_page, total_pages } = props.seasonState.metadata
-    const yearParams = props.routerProps.match.params.year;
 
     useEffect(() => {
         fetch(`http://localhost:3000/players?[full_name][eq]=${props.routerProps.match.params.name}`)
         .then(r => r.json())
-        .then(data => props.setPlayerStats(data.players));
-        
-        if(yearParams){
-            fetch(`http://localhost:3000/players?[year][eq]=${yearParams}&page=${current_page}`)
-            .then(r => r.json())
-            .then(data => {
-                props.setSeasonsPlayers(data.players);
-                props.setSeasonsMetadata(data.metadata);
-            })
-            .catch(err => console.log(err));
-        }
-    }, [current_page]);
-
+        .then(data => props.setPlayerStats(data.players.reverse()));
+    }, []);
 
     return (
         <div className="player-container">
-            <Header className="player-name-header" hidden={yearParams ? true : false}>{`${props.routerProps.match.params.name}`}</Header>
+            <Header className="player-name-header"></Header>
             <Table striped className="stats-table">
                 <Table.Header className="table-header">
                 <Table.Row>
-                    <Table.HeaderCell>Player</Table.HeaderCell>
+                    <Table.HeaderCell>Season</Table.HeaderCell>
                     <Table.HeaderCell>Tm</Table.HeaderCell>
                     <Table.HeaderCell>Pos</Table.HeaderCell>
                     <Table.HeaderCell>G</Table.HeaderCell>
@@ -66,8 +49,41 @@ const PlayersShowContainer = (props) => {
                     <Table.HeaderCell>PTS</Table.HeaderCell>
                 </Table.Row>
                 </Table.Header>
+                <Table.Body>
+                    {props.playerStats.map(player => 
+                    <Table.Row key={player._id}>
+                        <Table.Cell>{player.year-1}-{player.year.toString().slice(2)}</Table.Cell>
+                        <Table.Cell>{player.team.abbreviation}</Table.Cell>
+                        <Table.Cell>{player.position}</Table.Cell>
+                        <Table.Cell>{player.stats.game}</Table.Cell>
+                        <Table.Cell>{player.stats.gameStarted}</Table.Cell>
+                        <Table.Cell>{player.stats.minutePlayed}</Table.Cell>
+                        <Table.Cell>{player.stats.fieldGoal}</Table.Cell>
+                        <Table.Cell>{player.stats.fieldGoalAttempt}</Table.Cell>
+                        <Table.Cell>{player.stats.fieldGoalPercentage === 0 ? '0.000' : player.stats.fieldGoalPercentage}</Table.Cell>
+                        <Table.Cell>{player.stats.effectiveFieldGoalPercentage === 0 ? '0.000' : player.stats.effectiveFieldGoalPercentage}</Table.Cell>
+                        <Table.Cell>{player.stats.threePoint}</Table.Cell>
+                        <Table.Cell>{player.stats.threePointAttempt}</Table.Cell>
+                        <Table.Cell>{player.stats.threePointPercentage === 0 ? '0.000' : player.stats.threePointPercentage}</Table.Cell>
+                        <Table.Cell>{player.stats.twoPoint}</Table.Cell>
+                        <Table.Cell>{player.stats.twoPointAttempt}</Table.Cell>
+                        <Table.Cell>{player.stats.twoPointPercentage === 0 ? '0.000' : player.stats.twoPointPercentage}</Table.Cell>
+                        <Table.Cell>{player.stats.freeThrow}</Table.Cell>
+                        <Table.Cell>{player.stats.freeThrowAttempt}</Table.Cell>
+                        <Table.Cell>{player.stats.freeThrowPercentage === 0 ? '0.000' : player.stats.freeThrowPercentage}</Table.Cell>
+                        <Table.Cell>{player.stats.offensiveRebounds}</Table.Cell>
+                        <Table.Cell>{player.stats.defensiveRebounds}</Table.Cell>
+                        <Table.Cell>{player.stats.totalRebounds}</Table.Cell>
+                        <Table.Cell>{player.stats.assists}</Table.Cell>
+                        <Table.Cell>{player.stats.steals}</Table.Cell>
+                        <Table.Cell>{player.stats.blocks}</Table.Cell>
+                        <Table.Cell>{player.stats.personalFouls}</Table.Cell>
+                        <Table.Cell>{player.stats.turnovers}</Table.Cell>
+                        <Table.Cell>{player.stats.points}</Table.Cell>
+                    </Table.Row>
+                    )}
+                </Table.Body>
             </Table>
-            {yearParams ? props.seasonState.players.map(player => <TableContainer player={player} key={player._id} routerProps={props.routerProps}/>) : props.players.map(player => <TableContainer player={player} key={player._id}/>)}
         </div>
     );
 }
@@ -80,4 +96,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { setPlayerStats, setSeasonsPlayers, setSeasonsMetadata, updateSeasonsMetadata })(PlayersShowContainer);
+export default connect(mapStateToProps, { setPlayerStats })(PlayersShowContainer);

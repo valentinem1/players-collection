@@ -12,14 +12,14 @@ const SeasonContainer = (props) => {
     const { current_page, total_pages } = props.seasonState.metadata
     const yearParams = props.routerProps.match.params.year;
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:3000/players?[year][eq]=${yearParams}&page=${current_page}`)
-    //     .then(r => r.json())
-    //     .then(data => {
-    //         props.setSeasonsPlayers(data.players);
-    //         props.setSeasonsMetadata(data.metadata);
-    //     })
-    // }, [current_page]);
+    useEffect(() => {
+        fetch(`http://localhost:3000/players?[year][eq]=${yearParams}&page=${current_page}`)
+        .then(r => r.json())
+        .then(data => {
+            props.setSeasonsPlayers(data.players);
+            props.setSeasonsMetadata(data.metadata);
+        })
+    }, [current_page]);
 
     const handleForwardPagination = (evt) => {
         evt.preventDefault();
